@@ -1,3 +1,15 @@
 .spar-introduction {
 	text-align: center;
+
+	.line-break {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.spar-introduction {
+		.line-break {
+			display: initial;
+		}
+	}
 }
