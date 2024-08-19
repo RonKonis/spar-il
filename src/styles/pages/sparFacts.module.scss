@@ -1,0 +1,44 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.spar-facts {
+	@include mixins.dimensions(100%, 100%);
+	@include mixins.display-flex(column, center, center, wrap, 32px);
+
+	.facts-list {
+		@include mixins.dimensions(100%, 100%);
+		@include mixins.display-flex(row, center, stretch, wrap, 32px);
+		flex: 1 1 200px;
+		font-size: variables.$small-font-size;
+
+		.fact {
+			@include mixins.dimensions(min(100%, 220px), initial);
+			position: relative;
+			border: 2px solid variables.$theme-color;
+			border-radius: 12px;
+			padding: 24px 16px 8px;
+			animation-name: fade-in;
+			animation-duration: variables.$primary-duration;
+			animation-timeline: scroll();
+
+			.fact-icon {
+				position: absolute;
+				top: 0;
+				right: 50%;
+				transform: translate(50%, -50%);
+				user-select: none;
+			}
+		}
+	}
+}
+
+@keyframes fade-in {
+	from {
+		transform: translateY(12px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"next/core-web-vitals",
+		"plugin:@next/next/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"airbnb",
+		"airbnb/hooks"
+	],
+	"plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+	"parser": "@typescript-eslint/parser",
+	"rules": {
+		"indent": "off",
+		"quotes": "off",
+		"radix": "off",
+		"max-len": "off",
+		"max-classes-per-file": "off",
+		"linebreak-style": "off",
+		"implicit-arrow-linebreak": "off",
+		"object-curly-newline": "off",
+		"no-tabs": "off",
+		"no-undef": "off",
+		"no-plusplus": "off",
+		"no-unused-vars": "off",
+		"no-confusing-arrow": "off",
+		"no-restricted-syntax": "off",
+		"no-mixed-spaces-and-tabs": "off",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+		"@typescript-eslint/ban-types": ["error", { "extendDefaults": true, "types": { "{}": false } }],
+		"react/react-in-jsx-scope": "off",
+		"react/button-has-type": "off",
+		"react/jsx-indent-props": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-one-expression-per-line": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+		"import/no-unresolved": "error",
+		"import/prefer-default-export": "off",
+		"import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": [
+			"error",
+			{
+				"groups": [
+					[
+						"^next(?:/[^/]+)*$",
+						"^react$",
+						"^(?!@/).+",
+						"^@/app/.+$",
+						"^@/components/layout/.+$",
+						"^@/components/ui/.+$",
+						"^@/components/svgs/.+$",
+						"^@/actions(?:/[^/]+)*$",
+						"^@/hooks/.+$",
+						"^@/schemas/.+$",
+						"^@/lib/.+$",
+						"^@/utils/.+$",
+						"^@/types/.+$",
+						"^@/styles/.+$"
+					]
+				]
+			}
+		]
+	}
+}

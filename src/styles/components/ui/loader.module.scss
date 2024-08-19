@@ -1,0 +1,25 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.loader {
+	border-radius: 50%;
+	animation: spin 500ms linear infinite;
+}
+
+.small {
+	@include mixins.dimensions(64px, 64px);
+	border: 8px solid transparent;
+	border-top: 8px solid variables.$primary-color;
+}
+
+.medium {
+	@include mixins.dimensions(128px, 128px);
+	border: 16px solid transparent;
+	border-top: 16px solid variables.$primary-color;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

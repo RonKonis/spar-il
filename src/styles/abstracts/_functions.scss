@@ -1,0 +1,28 @@
+@use "sass:math";
+
+@function strip-unit($value) {
+	@return math.div($value, ($value * 0 + 1));
+}
+
+@function linear-clamp($minimum, $maximum) {
+	$unit: math.unit($minimum);
+
+	@if $unit != "px" and $unit != "rem" {
+		@error "Unit #{$unit} must be either px or rem";
+	}
+
+	$min-width: 320;
+	$max-width: 1920;
+
+	@if $unit == "rem" {
+		$min-width: math.div($min-width, 16);
+		$max-width: math.div($max-width, 16);
+	}
+
+	$minimum-value: strip-unit($minimum);
+	$maximum-value: strip-unit($maximum);
+	$slope: math.div($maximum-value - $minimum-value, $max-width - $min-width);
+	$y-axis-intersection: -$min-width * $slope + $minimum-value;
+
+	@return clamp(#{$minimum}, #{$y-axis-intersection}#{$unit} + #{$slope * 100}vw, #{$maximum});
+}

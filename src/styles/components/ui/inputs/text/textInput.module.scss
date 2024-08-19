@@ -1,0 +1,28 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.input-container {
+	@include mixins.dimensions(100%, fit-content);
+	@include mixins.display-flex(column, flex-start, flex-start, $gap: 8px);
+
+	.text {
+		@include mixins.dimensions(100%, fit-content);
+		@include mixins.display-flex(row, space-between, center, $gap: 16px);
+		border-radius: 12px;
+		padding: 4px 16px;
+		box-shadow: inset 0 0 0 2px variables.$theme-color;
+		transition: box-shadow variables.$primary-duration ease;
+
+		&:focus-within {
+			box-shadow: inset 0 0 0 4px variables.$theme-color;
+		}
+	}
+
+	.textarea {
+		padding: 0;
+	}
+
+	.invalid {
+		box-shadow: inset 0 0 0 2px variables.$error-color;
+	}
+}

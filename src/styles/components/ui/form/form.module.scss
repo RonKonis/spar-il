@@ -1,0 +1,7 @@
+@use "@/styles/abstracts/mixins";
+
+.form {
+	@include mixins.dimensions(100%, 100%);
+	@include mixins.display-flex(column, center, center, $gap: 16px);
+	border-radius: 16px;
+}

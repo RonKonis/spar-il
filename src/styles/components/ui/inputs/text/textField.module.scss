@@ -1,0 +1,54 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.input {
+	@include mixins.dimensions(100%, 100%);
+	color: variables.$primary-color;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding-block: 12px;
+	font-size: variables.$body-font-size;
+	unicode-bidi: plaintext;
+
+	&::placeholder {
+		transition: opacity variables.$primary-duration ease;
+	}
+
+	&:not(:read-only):focus::placeholder {
+		opacity: 0;
+	}
+
+	&:read-only {
+		cursor: default;
+	}
+}
+
+.textarea {
+	@extend .input;
+	padding-left: 12px;
+
+	&::placeholder {
+		@include mixins.dimensions(100%, fit-content);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	&::-webkit-scrollbar {
+		width: 14px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-clip: padding-box;
+		border: 4px solid transparent;
+		border-radius: 16px;
+	}
+
+	&::-webkit-scrollbar-track {
+		visibility: hidden;
+		margin: 8px 0;
+	}
+}

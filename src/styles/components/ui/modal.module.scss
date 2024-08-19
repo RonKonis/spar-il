@@ -1,0 +1,54 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.modal {
+	background-color: variables.$primary-bg-color;
+	border: none;
+	border-radius: 16px;
+	margin: auto;
+	box-shadow: variables.$primary-shadow, 0 0 0 100vmax #00000080;
+
+	&[open] {
+		animation: fade-in variables.$primary-duration ease forwards;
+	}
+
+	&.modal-closing {
+		pointer-events: none;
+		animation: fade-out variables.$primary-duration ease forwards;
+	}
+
+	.close-button {
+		@include mixins.display-flex(row, center, center);
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		border-radius: 50%;
+		padding: 0.5rem;
+
+		&:hover {
+			background-color: variables.$secondary-bg-color;
+		}
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 32px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 0;
+		transform: translate3d(0, 32px, 0);
+	}
+}

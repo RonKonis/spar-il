@@ -1,0 +1,27 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.header {
+	@include mixins.dimensions(100%, fit-content);
+	@include mixins.display-flex(column, center, center, $gap: 8px);
+	padding: 64px 5%;
+	background-color: variables.$theme-color;
+
+	.welcome-container {
+		@include mixins.dimensions(100%, fit-content);
+		@include mixins.display-flex(row, center, center, $gap: 8px);
+		direction: ltr;
+
+		.logo {
+			@include mixins.dimensions(199px, auto);
+		}
+	}
+
+	.title {
+		font-size: variables.$large-font-size;
+		font-family: variables.$title-font;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+}

@@ -1,0 +1,7 @@
+@use "@/styles/abstracts/mixins";
+
+.form-fields {
+	@include mixins.dimensions(100%, fit-content);
+	@include mixins.display-flex(column, center, center, $gap: 24px);
+	margin-top: 24px;
+}

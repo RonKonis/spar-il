@@ -1,0 +1,13 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.footer {
+	@include mixins.dimensions(100%, fit-content);
+	@include mixins.display-flex(column, center, center, $gap: 8px);
+	background-color: #f51820;
+	padding: 1rem 5% 2rem;
+
+	.enter-details {
+		font-weight: bold;
+	}
+}

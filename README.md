@@ -1,2 +1,1 @@
-# spar-il
-SPAR IL website
+# SPAR IL website

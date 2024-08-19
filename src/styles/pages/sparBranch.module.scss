@@ -1,0 +1,20 @@
+@use "@/styles/abstracts/mixins";
+
+.spar-branch {
+	@include mixins.dimensions(100%, 100%);
+	@include mixins.display-flex(column, center, center, wrap, 16px);
+
+	.location {
+		font-weight: bold;
+	}
+
+	.opening-hours {
+		@include mixins.dimensions(100%, 100%);
+		@include mixins.display-flex(column, center, center, wrap, 8px);
+		text-align: center;
+
+		.label {
+			font-weight: bold;
+		}
+	}
+}

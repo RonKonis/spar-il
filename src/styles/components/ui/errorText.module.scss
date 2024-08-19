@@ -1,0 +1,19 @@
+@use "@/styles/abstracts/variables";
+
+.error {
+	color: variables.$error-color;
+	padding-inline: 8px;
+	opacity: 0;
+	font-size: variables.$small-font-size;
+	line-height: 1rem;
+	animation: fade-in variables.$primary-duration ease forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

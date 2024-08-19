@@ -1,0 +1,28 @@
+@use "@/styles/abstracts/functions";
+@use "@/styles/base/typography";
+
+// Colors
+$primary-color: #fff;
+$secondary-color: #767e86;
+$theme-color: #12753c;
+$black-color: #1d1d1d;
+$error-color: #d03345;
+
+// Background Colors
+$primary-bg-color: #f5ede0;
+$secondary-bg-color: #e8e8e8;
+
+// Shadows
+$primary-shadow: 0 0 8px #00000040;
+
+// Fonts
+$title-font: "", sans-serif;
+$primary-font: "", sans-serif;
+
+$small-font-size: functions.linear-clamp(0.75rem, 1.25rem);
+$medium-font-size: functions.linear-clamp(1.25rem, 2rem);
+$large-font-size: functions.linear-clamp(1.25rem, 2.25rem);
+$body-font-size: functions.linear-clamp(1rem, 1.75rem);
+
+// Transitions & Animations
+$primary-duration: 325ms;

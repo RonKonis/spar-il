@@ -1,0 +1,9 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.spar {
+	@include mixins.dimensions(100%, 100%);
+	@include mixins.display-flex(column, center, center, $gap: 32px);
+	color: variables.$theme-color;
+	padding: 3rem 5% 2rem;
+}

@@ -1,0 +1,52 @@
+@use "@/styles/abstracts/variables";
+
+.action-button {
+	border-radius: 32px;
+	padding: 8px 32px;
+	font-weight: 600;
+	text-transform: capitalize;
+	white-space: nowrap;
+	transition: background-color variables.$primary-duration ease;
+	-webkit-tap-highlight-color: transparent;
+
+	&:not(:disabled) {
+		&:hover,
+		&:focus {
+			background-color: #{variables.$theme-color}80;
+		}
+
+		&:active {
+			filter: brightness(0.85);
+		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+.primary {
+	color: variables.$primary-color;
+	background-color: variables.$theme-color;
+	font-size: variables.$body-font-size;
+}
+
+.secondary {
+	color: variables.$theme-color;
+	font-size: variables.$body-font-size;
+	box-shadow: inset 0 0 0 1px variables.$theme-color;
+	transition-property: color, background-color, box-shadow;
+
+	&:not(:disabled) {
+		&:hover,
+		&:focus {
+			color: variables.$primary-color;
+			box-shadow: inset 0 0 0 2px variables.$theme-color;
+		}
+	}
+}
+
+.tertiary {
+	color: variables.$primary-color;
+}
