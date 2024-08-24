@@ -1,0 +1,13 @@
+@use "@/styles/abstracts/variables";
+@use "@/styles/abstracts/mixins";
+
+.scroll-reveal {
+	transform: translateY(24px);
+	opacity: 0;
+	transition: transform variables.$primary-duration, opacity variables.$primary-duration;
+
+	&.in-view {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

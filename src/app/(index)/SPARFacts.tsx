@@ -1,3 +1,4 @@
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import styles from "@/styles/pages/sparFacts.module.scss";
 
 interface SPARFact {
@@ -34,10 +35,10 @@ export default function SPARFacts() {
 			<h4>{`${sparFacts.length} דברים שלא ידעתם על ספאר`}</h4>
 			<div className={styles["facts-list"]}>
 				{sparFacts.map((fact) => (
-					<div key={fact.description} className={styles.fact}>
+					<ScrollReveal as="div" key={fact.description} className={styles.fact} threshold={0.8}>
 						<div className={styles["fact-icon"]}>{fact.icon}</div>
 						{fact.description}
-					</div>
+					</ScrollReveal>
 				))}
 			</div>
 		</div>

@@ -1,6 +1,6 @@
-import SPARBranch from "@/app/SPARBranch";
-import SPARFacts from "@/app/SPARFacts";
-import SPARIntroduction from "@/app/SPARIntroduction";
+import SPARBranch from "@/app/(index)/SPARBranch";
+import SPARFacts from "@/app/(index)/SPARFacts";
+import SPARIntroduction from "@/app/(index)/SPARIntroduction";
 import styles from "@/styles/pages/index.module.scss";
 
 export default function Index() {
