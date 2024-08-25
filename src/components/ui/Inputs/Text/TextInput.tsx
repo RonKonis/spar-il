@@ -4,26 +4,32 @@ import TextField from "@/components/ui/Inputs/Text/TextField";
 import { ErrorMessage } from "@/types/error";
 import styles from "@/styles/components/ui/inputs/text/textInput.module.scss";
 
+interface TextInputClassNames {
+	container?: string;
+	input?: string;
+	error?: string;
+}
+
 type Props = {
-	className?: string;
+	classNames?: TextInputClassNames;
 	icon?: JSX.Element;
 	error?: ErrorMessage;
 } & ComponentProps<typeof TextField>;
 
-const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(({ className = undefined, icon = undefined, error = undefined, ...rest }, ref) => (
-	<div className={styles["input-container"]}>
-		<div className={`${styles.text} ${rest.kind === "textarea" ? styles.textarea : ""} ${className ?? ""} ${error ? styles.invalid : ""}`}>
-			<TextField ref={ref} {...rest} />
+const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(({ classNames = {}, icon = undefined, error = undefined, ...rest }, ref) => (
+	<div className={`${styles["input-container"]} ${classNames.container ?? ""}`}>
+		<div className={`${styles.text} ${rest.kind === "textarea" ? styles.textarea : ""} ${error ? styles.invalid : ""}`}>
+			<TextField ref={ref} className={classNames.input} {...rest} />
 			{icon}
 		</div>
-		<ErrorText error={error} />
+		<ErrorText className={classNames.error} error={error} />
 	</div>
 ));
 
 export default TextInput;
 
 TextInput.defaultProps = {
-	className: undefined,
+	classNames: undefined,
 	icon: undefined,
 	error: undefined,
 };

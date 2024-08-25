@@ -15,9 +15,9 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>((pro
 	const { kind } = props;
 
 	return kind === "textarea" ? (
-		<textarea ref={ref as Ref<HTMLTextAreaElement>} className={styles.textarea} autoComplete="on" {...props} />
+		<textarea autoComplete="on" {...props} ref={ref as Ref<HTMLTextAreaElement>} className={`${styles.textarea} ${props.className ?? ""}`} />
 	) : (
-		<input ref={ref as Ref<HTMLInputElement>} className={styles.input} type={kind} autoComplete="on" {...props} />
+		<input autoComplete="on" {...props} ref={ref as Ref<HTMLInputElement>} className={`${styles.input} ${props.className ?? ""}`} type={kind} />
 	);
 });
 

@@ -1,3 +1,4 @@
+import Contact from "@/components/layout/Footer/Contact";
 import styles from "@/styles/components/layout/footer/index.module.scss";
 
 export default function Footer() {
@@ -6,8 +7,7 @@ export default function Footer() {
 			<p>
 				לשאלות או לבירור על תעסוקה <span className={styles["enter-details"]}>השאירו את פרטיכם</span>
 			</p>
-
-			<div className={styles.contact}>xd</div>
+			<Contact />
 		</footer>
 	);
 }
