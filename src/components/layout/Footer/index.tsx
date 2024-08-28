@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<p>
-				לשאלות או לבירור על תעסוקה <span className={styles["enter-details"]}>השאירו את פרטיכם</span>
+				לשאלות או לבירור על תעסוקה <strong>השאירו את פרטיכם</strong>
 			</p>
 			<Contact />
 		</footer>

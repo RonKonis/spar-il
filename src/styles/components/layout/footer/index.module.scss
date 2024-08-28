@@ -6,8 +6,4 @@
 	@include mixins.display-flex(column, center, center, $gap: 32px);
 	background-color: #f51820;
 	padding: 1rem 15% 2rem;
-
-	.enter-details {
-		font-weight: bold;
-	}
 }

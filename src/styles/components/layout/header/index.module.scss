@@ -9,11 +9,12 @@
 
 	.welcome-container {
 		@include mixins.dimensions(100%, fit-content);
-		@include mixins.display-flex(row, center, center, $gap: 8px);
+		@include mixins.display-flex(column, center, center, $gap: 8px);
 		direction: ltr;
 
 		.logo {
-			@include mixins.dimensions(199px, auto);
+			height: auto;
+			max-width: calc(45% + 48px);
 		}
 	}
 
@@ -23,5 +24,13 @@
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.header {
+		.welcome-container {
+			@include mixins.display-flex(row, center, center, $gap: 8px);
+		}
 	}
 }
