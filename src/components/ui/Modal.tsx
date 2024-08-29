@@ -66,7 +66,7 @@ export default function Modal() {
 
 	return (
 		<dialog ref={dialogRef} className={styles.modal}>
-			<button className={styles["close-button"]} onClick={closeModal}>
+			<button className={styles["close-button"]} onClick={closeModal} aria-label="close">
 				{}
 				<XSVG />
 			</button>

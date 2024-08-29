@@ -16,6 +16,11 @@
 
 .contact-field-input {
 	color: variables.$black-color;
+	text-align: center;
+
+	&::placeholder {
+		color: variables.$black-color;
+	}
 }
 
 .contact-field-error {
